@@ -8,7 +8,7 @@
     ],
     "routes": [
         {
-            "src": "/dash(.*)",
+            "src": "/(.*)",
             "dest": "index.js"
         }
     ]
