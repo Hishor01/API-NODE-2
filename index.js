@@ -19,7 +19,7 @@ let studentRecord = [
     {id: 5, name: "Emily", age: 19, department: "Mathematics"}
 ]
 
-app.get("/dash", (req, res) => {
+app.get("/", (req, res) => {
     res.send(studentRecord)
 })
 
