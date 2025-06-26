@@ -13,22 +13,17 @@ app.get("/dashboard", (req, res) => {
 })
 
 let studentRecord = [
-    {id: 1, name: "John", age: 20, department: "Science", img: "/Scientist-Johns.png"},
-    {id: 2, name: "Jane", age: 22, department: "Arts", img: "/download.png"},
-    {id: 3, name: "Doe", age: 21, department: "Commerce", img: "/images.jpg"},
-    {id: 4, name: "Smith", age: 23, department: "Engineering", img: "/download.jpg"},
-    {id: 5, name: "Emily", age: 19, department: "Mathematics", img: "/images (1).jpg"},
-    {id: 6, name: "Michael", age: 24, department: "Physics", img: "/Scientist-Johns.png"},
-    {id: 7, name: "Sarah", age: 21, department: "Biology", img: "/Scientist-Johns.png"}
+    {id: 1, name: "John", age: 20, department: "Science", img: src="/public/Scientist-Johns.png"},
+    {id: 2, name: "Jane", age: 22, department: "Arts",img: src="/public/images.jpg"},
+    {id: 3, name: "Doe", age: 21, department: "Commerce", img: src="/public/download.jpg"},
+    {id: 4, name: "Smith", age: 23, department: "Engineering", img: src="/public/Engineer-Smith.png"},
+    {id: 5, name: "Emily", age: 19, department: "Mathematics", img: src="/public/Mathematician-Emily.png"},
+    {id: 6, name: "Michael", age: 24, department: "Physics", img: src="/public/Physicist-Michael.png"},
+    {id: 7, name: "Sarah", age: 21, department: "Biology", img: src="/public/download.png"}  
 ]
 
 app.get("/", (req, res) => {
-    let html = '<h1>Student Records</h1><ul>';
-    studentRecord.forEach(student => {
-        html += `<li><strong>${student.name}</strong> (${student.department})<br><img src="${student.img}" alt="${student.name}" width="100"></li>`;
-    });
-    html += '</ul>';
-    res.send(html);
+    res.send(studentRecord)
 })
 
 app.listen(port, () => {
